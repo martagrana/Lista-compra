@@ -1,0 +1,21 @@
+<h1>Lista de la Compra</h1>
+<div class="contenedor">
+  <div class="contenedor-partes">
+    <h2>Productos para añadir</h2>
+    <div>
+      <input type="text" [(ngModel)]="nuevoProducto">
+    </div>
+    <div class="boton">
+      <button type="button" (click)="addProducto()">Añadir</button>
+    </div>
+  </div>
+
+  <div class="contenedor-partes">
+    <div>
+      <h2>Productos para comprar</h2>
+      <div *ngFor="let articulo of productos">{{articulo}}</div>
+    </div>
+  </div>
+
+
+</div>
