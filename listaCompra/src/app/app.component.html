@@ -13,9 +13,12 @@
   <div class="contenedor-partes">
     <div>
       <h2>Productos para comprar</h2>
-      <div *ngFor="let articulo of productos">{{articulo}}</div>
+      <div *ngFor="let articulo of productos">
+        <input type="checkbox">
+        <label for="articulo"> {{articulo}}</label>
+        <button (click)="eliminar()">x</button>
+      </div>
     </div>
   </div>
-
 
 </div>

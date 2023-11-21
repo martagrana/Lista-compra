@@ -9,11 +9,15 @@ export class AppComponent {
   title = 'listaCompra';
 
   productos: string[] = [];
-  nuevoProducto: string = 'pan';
+  nuevoProducto: string = '';
 
 
   addProducto() {
     this.productos.push(this.nuevoProducto);
+  }
+
+  eliminar() {
+    this.productos.splice(0, 1);
   }
 
 }
