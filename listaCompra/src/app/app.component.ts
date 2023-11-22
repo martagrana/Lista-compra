@@ -14,6 +14,7 @@ export class AppComponent {
 
   checkboxEstado: boolean = false;
 
+
   addProducto() {
     this.productos.push(this.nuevoProducto);
     this.nuevoProducto = '';
@@ -22,5 +23,16 @@ export class AppComponent {
   eliminar(index: number) {
     this.productos.splice(index, 1);
   }
+
+
+  tacharProducto(index: number): void {
+
+    if (this.checkboxEstado = false) {
+
+      this.productos[index] = this.productos[index];
+
+    }
+  }
+
 
 }
