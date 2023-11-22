@@ -11,6 +11,7 @@ export class AppComponent {
   productos: string[] = [];
   nuevoProducto: string = '';
 
+  checkboxEstado: boolean = false;
 
   addProducto() {
     this.productos.push(this.nuevoProducto);
@@ -18,6 +19,9 @@ export class AppComponent {
 
   eliminar() {
     this.productos.splice(0, 1);
+  }
+
+  tacharTexto(): void {
   }
 
 }

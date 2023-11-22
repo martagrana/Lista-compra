@@ -14,11 +14,12 @@
     <div>
       <h2>Productos para comprar</h2>
       <div *ngFor="let articulo of productos">
-        <input type="checkbox">
-        <label for="articulo"> {{articulo}}</label>
+        <input type="checkbox" [(ngModel)]="checkboxEstado">
+        <label [class.tachado]="checkboxEstado" for="articulo"> {{articulo}}</label>
         <button (click)="eliminar()">x</button>
       </div>
     </div>
   </div>
+
 
 </div>
