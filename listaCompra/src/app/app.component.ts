@@ -21,7 +21,4 @@ export class AppComponent {
     this.productos.splice(0, 1);
   }
 
-  tacharTexto(): void {
-  }
-
 }
