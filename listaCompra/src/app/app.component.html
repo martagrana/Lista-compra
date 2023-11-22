@@ -13,13 +13,12 @@
   <div class="contenedor-partes">
     <div>
       <h2>Productos para comprar</h2>
-      <div *ngFor="let articulo of productos">
+      <div *ngFor="let articulo of productos let i = index">
         <input type="checkbox" [(ngModel)]="checkboxEstado">
-        <label [class.tachado]="checkboxEstado" for="articulo"> {{articulo}}</label>
-        <button (click)="eliminar()">x</button>
+        <label [class.tachado]="checkboxEstado" for="articulo{}"> {{articulo}}</label>
+        <button (click)="eliminar(i)">x</button>
       </div>
     </div>
   </div>
-
 
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { findIndex } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -15,10 +16,11 @@ export class AppComponent {
 
   addProducto() {
     this.productos.push(this.nuevoProducto);
+    this.nuevoProducto = '';
   }
 
-  eliminar() {
-    this.productos.splice(0, 1);
+  eliminar(index: number) {
+    this.productos.splice(index, 1);
   }
 
 }
