@@ -25,14 +25,11 @@ export class AppComponent {
   }
 
 
-  tacharProducto(index: number): void {
-
+  tacharProducto(index: number) {
+    console.log('Checkbox state:', this.checkboxEstado);
     if (this.checkboxEstado = false) {
-
-      this.productos[index] = this.productos[index];
-
+      this.productos[index];
     }
   }
-
 
 }
