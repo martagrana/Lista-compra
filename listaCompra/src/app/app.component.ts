@@ -12,7 +12,8 @@ export class AppComponent {
   productos: string[] = [];
   nuevoProducto: string = '';
 
-  checkboxEstado: boolean = false;
+  checkboxEstado: boolean[] = [];
+
 
 
   addProducto() {
@@ -25,11 +26,6 @@ export class AppComponent {
   }
 
 
-  tacharProducto(index: number) {
-    console.log('Checkbox state:', this.checkboxEstado);
-    if (this.checkboxEstado = false) {
-      this.productos[index];
-    }
-  }
+
 
 }
