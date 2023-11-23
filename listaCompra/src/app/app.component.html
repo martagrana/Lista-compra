@@ -19,8 +19,12 @@
       <h2>Productos para comprar</h2>
       <div *ngFor="let articulo of productos; let i = index">
         <input type="checkbox" [(ngModel)]="articulo.seleccionado">
-        <label [class.tachado]="articulo.seleccionado" for="articulo{}"> {{articulo.nombre}}</label>
-        <label [class.verde]="articulo.mayor" for="articulo{}"> {{articulo.cantidad}}</label>
+        <label *ngIf="articulo.cantidad<3" [class.tachado]="articulo.seleccionado" for="articulo{}">
+          {{articulo.nombre}}</label>
+        <label *ngIf="articulo.cantidad>=3" style="color:darkred" [class.tachado]="articulo.seleccionado"
+          for="articulo{}">
+          {{articulo.nombre}}</label>
+        <label> {{articulo.cantidad}}</label>
         <button (click)="eliminar(i)">x</button>
       </div>
     </div>
