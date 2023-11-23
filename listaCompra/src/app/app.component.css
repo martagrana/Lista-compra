@@ -29,3 +29,7 @@
 .tachado {
     text-decoration: line-through;
 }
+
+.verde {
+    text-decoration-color: darkgreen;
+}

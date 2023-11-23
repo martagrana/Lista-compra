@@ -5,6 +5,10 @@
     <div>
       <input type="text" [(ngModel)]="nuevoProducto.nombre">
     </div>
+    <h2>Cantidad</h2>
+    <div>
+      <input type="number" [(ngModel)]="nuevoProducto.cantidad">
+    </div>
     <div class="boton">
       <button type="button" (click)="addProducto()">Añadir</button>
     </div>
@@ -16,6 +20,7 @@
       <div *ngFor="let articulo of productos; let i = index">
         <input type="checkbox" [(ngModel)]="articulo.seleccionado">
         <label [class.tachado]="articulo.seleccionado" for="articulo{}"> {{articulo.nombre}}</label>
+        <label [class.verde]="articulo.mayor" for="articulo{}"> {{articulo.cantidad}}</label>
         <button (click)="eliminar(i)">x</button>
       </div>
     </div>
