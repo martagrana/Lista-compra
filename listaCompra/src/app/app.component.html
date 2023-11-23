@@ -3,7 +3,7 @@
   <div class="contenedor-partes">
     <h2>Productos para añadir</h2>
     <div>
-      <input type="text" [(ngModel)]="nuevoProducto">
+      <input type="text" [(ngModel)]="nuevoProducto.nombre">
     </div>
     <div class="boton">
       <button type="button" (click)="addProducto()">Añadir</button>
@@ -14,8 +14,8 @@
     <div>
       <h2>Productos para comprar</h2>
       <div *ngFor="let articulo of productos; let i = index">
-        <input type="checkbox" [(ngModel)]="checkboxEstado[i]">
-        <label [class.tachado]="checkboxEstado[i]" for="articulo{}"> {{articulo}}</label>
+        <input type="checkbox" [(ngModel)]="articulo.seleccionado">
+        <label [class.tachado]="articulo.seleccionado" for="articulo{}"> {{articulo.nombre}}</label>
         <button (click)="eliminar(i)">x</button>
       </div>
     </div>

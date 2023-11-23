@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { findIndex } from 'rxjs';
 
+class Producto {
+  nombre: string = '';
+  seleccionado: boolean = false;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,16 +12,14 @@ import { findIndex } from 'rxjs';
 export class AppComponent {
   title = 'listaCompra';
 
-  productos: string[] = [];
-  nuevoProducto: string = '';
-
-  checkboxEstado: boolean[] = [];
+  productos: Producto[] = [];
+  nuevoProducto: Producto = { nombre: '', seleccionado: false };
 
 
 
   addProducto() {
     this.productos.push(this.nuevoProducto);
-    this.nuevoProducto = '';
+    this.nuevoProducto = { nombre: '', seleccionado: false };
   }
 
   eliminar(index: number) {
