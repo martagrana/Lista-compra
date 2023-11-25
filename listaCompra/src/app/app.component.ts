@@ -40,6 +40,7 @@ export class AppComponent {
 
     localStorage.setItem('productos', JSON.stringify(this.productos));
     localStorage.setItem('ultimo-nombre-introducido', p.nombre);
+    // Esto es un ejemplo de arrays con cadenas
     console.log(p.nombre);
     console.log(p.nombre[2]);
     for (let index = 0; index < p.nombre.length; index++) {
