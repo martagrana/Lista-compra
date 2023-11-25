@@ -5,6 +5,12 @@ class Producto {
   seleccionado: boolean = false;
   cantidad: number = 1;
   mayor: boolean = false;
+
+  constructor(nombre: string, cantidad: number) {
+    this.nombre = nombre;
+    this.cantidad = cantidad;
+    this.mayor = this.cantidad >= 3;
+  }
 }
 @Component({
   selector: 'app-root',
@@ -18,9 +24,9 @@ export class AppComponent {
   nuevoProducto: Producto = { nombre: '', seleccionado: false, cantidad: 1, mayor: false };
 
 
-
   addProducto() {
-    this.productos.push(this.nuevoProducto);
+    let p = new Producto(this.nuevoProducto.nombre, this.nuevoProducto.cantidad);
+    this.productos.push(p);
     this.nuevoProducto = { nombre: '', seleccionado: false, cantidad: 1, mayor: false };
   }
 
