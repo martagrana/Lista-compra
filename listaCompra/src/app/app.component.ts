@@ -21,13 +21,16 @@ export class AppComponent {
   title = 'listaCompra';
 
   productos: Producto[] = [];
-  nuevoProducto: Producto = { nombre: '', seleccionado: false, cantidad: 1, mayor: false };
+
+  nombre: string = '';
+  cantidad: number = 1;
 
 
   addProducto() {
-    let p = new Producto(this.nuevoProducto.nombre, this.nuevoProducto.cantidad);
+    let p = new Producto(this.nombre, this.cantidad);
     this.productos.push(p);
-    this.nuevoProducto = { nombre: '', seleccionado: false, cantidad: 1, mayor: false };
+    this.nombre = '';
+    this.cantidad = 1;
   }
 
   eliminar(index: number) {
