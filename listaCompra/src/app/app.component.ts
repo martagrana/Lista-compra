@@ -25,12 +25,30 @@ export class AppComponent {
   nombre: string = '';
   cantidad: number = 1;
 
+  constructor() {
+    console.log('estoy en el constructor del app.component');
+    let x: any = localStorage.getItem('productos');
+    this.productos = JSON.parse(x);
+    console.log(x);
+  }
 
   addProducto() {
     let p = new Producto(this.nombre, this.cantidad);
     this.productos.push(p);
     this.nombre = '';
     this.cantidad = 1;
+
+    localStorage.setItem('productos', JSON.stringify(this.productos));
+    localStorage.setItem('ultimo-nombre-introducido', p.nombre);
+    console.log(p.nombre);
+    console.log(p.nombre[2]);
+    for (let index = 0; index < p.nombre.length; index++) {
+      const element = p.nombre[index];
+      let esPar: boolean = index % 2 == 0;
+      if (!esPar) { console.log(element); }
+
+    }
+
   }
 
   eliminar(index: number) {
