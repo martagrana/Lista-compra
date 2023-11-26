@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 class Producto {
   nombre: string = '';
@@ -17,7 +17,8 @@ class Producto {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   title = 'listaCompra';
 
   productos: Producto[] = [];
@@ -25,8 +26,9 @@ export class AppComponent {
   nombre: string = '';
   cantidad: number = 1;
 
-  constructor() {
-    console.log('estoy en el constructor del app.component');
+
+  ngOnInit(): void {
+    console.log('estoy en el Init');
     this.cargarDesdeBD();
   }
 
