@@ -28,9 +28,13 @@ export class AppComponent {
   constructor() {
     console.log('estoy en el constructor del app.component');
     let x: any = localStorage.getItem('productos');
-    this.productos = JSON.parse(x);
-    console.log(x);
+    if (x !== null) {
+      this.productos = JSON.parse(x);
+      console.log(x);
+    }
+
   }
+
 
   addProducto() {
     let p = new Producto(this.nombre, this.cantidad);
@@ -39,7 +43,8 @@ export class AppComponent {
     this.cantidad = 1;
 
     localStorage.setItem('productos', JSON.stringify(this.productos));
-    localStorage.setItem('ultimo-nombre-introducido', p.nombre);
+
+    /*localStorage.setItem('ultimo-nombre-introducido', p.nombre);
     // Esto es un ejemplo de arrays con cadenas
     console.log(p.nombre);
     console.log(p.nombre[2]);
@@ -48,15 +53,17 @@ export class AppComponent {
       let esPar: boolean = index % 2 == 0;
       if (!esPar) { console.log(element); }
 
-    }
+    }*/
 
   }
 
   eliminar(index: number) {
     this.productos.splice(index, 1);
+    localStorage.setItem('productos', JSON.stringify(this.productos));
   }
 
-
-
+  guardar() {
+    localStorage.setItem('productos', JSON.stringify(this.productos));
+  }
 
 }
