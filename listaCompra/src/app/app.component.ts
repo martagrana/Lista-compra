@@ -27,12 +27,7 @@ export class AppComponent {
 
   constructor() {
     console.log('estoy en el constructor del app.component');
-    let x: any = localStorage.getItem('productos');
-    if (x !== null) {
-      this.productos = JSON.parse(x);
-      console.log(x);
-    }
-
+    this.cargarDesdeBD();
   }
 
 
@@ -42,7 +37,7 @@ export class AppComponent {
     this.nombre = '';
     this.cantidad = 1;
 
-    localStorage.setItem('productos', JSON.stringify(this.productos));
+    this.guardarEnBD();
 
     /*localStorage.setItem('ultimo-nombre-introducido', p.nombre);
     // Esto es un ejemplo de arrays con cadenas
@@ -59,11 +54,23 @@ export class AppComponent {
 
   eliminar(index: number) {
     this.productos.splice(index, 1);
-    localStorage.setItem('productos', JSON.stringify(this.productos));
+    this.guardarEnBD();
   }
 
   guardar() {
-    localStorage.setItem('productos', JSON.stringify(this.productos));
+    this.guardarEnBD();
+  }
+  // estas funciones manejan la persistencia
+  guardarEnBD() {
+    let dbProductos = JSON.stringify(this.productos)
+    sessionStorage.setItem('productos', dbProductos);
+  }
+  cargarDesdeBD() {
+    let dbProductos: any = sessionStorage.getItem('productos');
+    if (dbProductos !== null) {
+      this.productos = JSON.parse(dbProductos);
+      console.log(dbProductos);
+    }
   }
 
 }
