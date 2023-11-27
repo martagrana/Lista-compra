@@ -6,15 +6,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule, FormsModule, BrowserAnimationsModule, MatSlideToggleModule, MatButtonModule, MatIconModule
-  ],
+    BrowserModule, FormsModule, BrowserAnimationsModule, MatSlideToggleModule, MatButtonModule, MatIconModule, MatCheckboxModule
+    , MatDividerModule, MatListModule, MatCardModule, MatInputModule],
   providers: [],
   bootstrap: [AppComponent]
 })
