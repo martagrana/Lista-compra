@@ -1,41 +1,45 @@
-<mat-card class="example-card">
-  <mat-card-title>Lista de la Compra</mat-card-title>
-  <mat-card-content class="contenedor-partes">
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <mat-label>Producto</mat-label>
-        <input matInput placeholder="tu artículo" [(ngModel)]="nombre" name="nombre">
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Cantidad</mat-label>
-        <input matInput placeholder="numero de artículos" [(ngModel)]="cantidad" name="cantidad">
-      </mat-form-field>
-    </form>
-    <div class="boton">
-      <button mat-stroked-button (click)="addProducto()">Añadir</button>
-    </div>
-  </mat-card-content>
-</mat-card>
+<section>
+  <mat-card class="example-card">
+    <mat-card-title>Lista de la Compra</mat-card-title>
+    <mat-card-content class="contenedor-partes">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Producto</mat-label>
+          <input matInput placeholder="tu artículo" [(ngModel)]="nombre" name="nombre">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Cantidad</mat-label>
+          <input matInput placeholder="numero de artículos" [(ngModel)]="cantidad" name="cantidad">
+        </mat-form-field>
+      </form>
+      <div class="boton">
+        <button mat-stroked-button (click)="addProducto()">Añadir</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
 
-<mat-card class="example-card">
-  <mat-card-content class="contenedor-partes">
-    <mat-card-title>Productos para comprar</mat-card-title>
-    <table>
-      <tr>
-        <th>Estado</th>
-        <th>Producto</th>
-        <th>Cantidad</th>
-        <th>Eliminar</th>
-      </tr>
-      <tr *ngFor="let articulo of productos; let i = index">
-        <td>
-          <mat-checkbox class="example-margin" [(ngModel)]="articulo.seleccionado" (change)="guardar()"></mat-checkbox>
-        </td>
-        <td><label [ngClass]="{'verde':articulo.cantidad>=3}" [class.tachado]="articulo.seleccionado" for="articulo{}">
-            {{articulo.nombre}}</label></td>
-        <td>{{articulo.cantidad}}</td>
-        <td><mat-icon (click)="eliminar(i)">cancel</mat-icon></td>
-      </tr>
-    </table>
-  </mat-card-content>
-</mat-card>
+  <mat-card class="example-card">
+    <mat-card-content class="contenedor-partes">
+      <mat-card-title>Productos para comprar</mat-card-title>
+      <table>
+        <tr>
+          <th>Estado</th>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Eliminar</th>
+        </tr>
+        <tr *ngFor="let articulo of productos; let i = index">
+          <td>
+            <mat-checkbox class="example-margin" [(ngModel)]="articulo.seleccionado"
+              (change)="guardar()"></mat-checkbox>
+          </td>
+          <td><label [ngClass]="{'verde':articulo.cantidad>=3}" [class.tachado]="articulo.seleccionado"
+              for="articulo{}">
+              {{articulo.nombre}}</label></td>
+          <td>{{articulo.cantidad}}</td>
+          <td><mat-icon (click)="eliminar(i)">cancel</mat-icon></td>
+        </tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</section>
