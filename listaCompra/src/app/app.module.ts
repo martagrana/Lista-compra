@@ -12,6 +12,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   ],
   imports: [
     BrowserModule, FormsModule, BrowserAnimationsModule, MatSlideToggleModule, MatButtonModule, MatIconModule, MatCheckboxModule
-    , MatDividerModule, MatListModule, MatCardModule, MatInputModule, MatFormFieldModule],
+    , MatDividerModule, MatListModule, MatCardModule, MatInputModule, MatFormFieldModule, MatTableModule],
   providers: [],
   bootstrap: [AppComponent]
 })
