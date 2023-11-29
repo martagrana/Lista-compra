@@ -1,36 +1,32 @@
 <h1>Lista de la Compra</h1>
-<!--esta parte es una prueba de angular material-->
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
-<button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
-  <mat-icon>home</mat-icon>
-</button>
-<!--fin de la prueba-->
-<div class="contenedor">
-  <div class="contenedor-partes">
-    <h2>Productos para añadir</h2>
+
+<mat-card class="example-card">
+  <mat-card-content class="contenedor-partes">
+    <mat-card-title>Productos para añadir</mat-card-title>
     <div>
       <input type="text" [(ngModel)]="nombre">
     </div>
-    <h2>Cantidad</h2>
+    <mat-card-title>Cantidad</mat-card-title>
     <div>
       <input type="number" [(ngModel)]="cantidad">
     </div>
     <div class="boton">
-      <button type="button" (click)="addProducto()">Añadir</button>
+      <button mat-stroked-button (click)="addProducto()">Añadir</button>
     </div>
-  </div>
+  </mat-card-content>
+</mat-card>
 
-  <div class="contenedor-partes">
-    <div>
-      <h2>Productos para comprar</h2>
-      <div *ngFor="let articulo of productos; let i = index">
-        <input type="checkbox" [(ngModel)]="articulo.seleccionado" (change)="guardar()">
+<mat-card class="example-card">
+  <mat-card-content class="contenedor-partes">
+    <mat-card-title>Productos para comprar</mat-card-title>
+    <mat-list *ngFor="let articulo of productos; let i = index">
+      <mat-checkbox class="example-margin" [(ngModel)]="articulo.seleccionado" (change)="guardar()">
         <label [ngClass]="{'verde':articulo.cantidad>=3}" [class.tachado]="articulo.seleccionado" for="articulo{}">
           {{articulo.nombre}}</label>
         <label> {{articulo.cantidad}}</label>
-        <button (click)="eliminar(i)">x</button>
-      </div>
-    </div>
-  </div>
-
-</div>
+        <mat-icon (click)="eliminar(i)">cancel</mat-icon>
+      </mat-checkbox>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
